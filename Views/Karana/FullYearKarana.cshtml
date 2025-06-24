@@ -1,0 +1,28 @@
+﻿@model List<PanchangaMvc.Controllers.KaranaController.KaranaResult>
+
+@{
+    ViewBag.Title = "Full Year Karana";
+}
+
+<h2>Karana for Each Day in 2025</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Karana</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var k in Model)
+        {
+            <tr>
+                <td>@k.Date.ToString("dd-MMM-yyyy")</td>
+                <td>@k.KaranaName</td>
+                <td>@k.StartTime.ToString("HH:mm:ss")</td>
+                <td>@k.EndTime.ToString("HH:mm:ss")</td>
+            </tr>
+        }
+    </tbody>
+</table>
