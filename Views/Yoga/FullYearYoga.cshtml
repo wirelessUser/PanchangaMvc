@@ -1,0 +1,28 @@
+﻿@model List<PanchangaMvc.Controllers.YogaController.YogaResult>
+
+@{
+    ViewBag.Title = "Full Year Yoga";
+}
+
+<h2>Yoga for Each Day in 2025</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Yoga</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var yoga in Model)
+        {
+            <tr>
+                <td>@yoga.Date.ToString("dd-MMM-yyyy")</td>
+                <td>@yoga.YogaName</td>
+                <td>@yoga.StartTime.ToString("HH:mm:ss")</td>
+                <td>@yoga.EndTime.ToString("HH:mm:ss")</td>
+            </tr>
+        }
+    </tbody>
+</table>

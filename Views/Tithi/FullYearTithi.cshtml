@@ -1,0 +1,29 @@
+﻿@model List<PanchangaMvc.Controllers.TithiController.TithiResult>
+
+@{
+    ViewData["Title"] = "Full Year Tithi";
+}
+
+<h2>📅 Full Year Tithi Data</h2>
+
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Date</th>
+            <th>Tithi</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Date.ToString("dd-MMM-yyyy")</td>
+                <td>@item.TithiName</td>
+                <td>@item.StartTime.ToString("HH:mm:ss")</td>
+                <td>@item.EndTime.ToString("HH:mm:ss")</td>
+            </tr>
+        }
+    </tbody>
+</table>
