@@ -1,0 +1,28 @@
+﻿@model List<PanchangaMvc.Controllers.HoraController.HoraSpan>
+
+@{
+    ViewBag.Title = "Daily Hora Timings";
+}
+
+<h2>Hora Timings for 2025</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Planet</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var h in Model)
+        {
+            <tr>
+                <td>@h.Date.ToString("dd-MMM-yyyy")</td>
+                <td>@h.Planet</td>
+                <td>@h.StartTime</td>
+                <td>@h.EndTime</td>
+            </tr>
+        }
+    </tbody>
+</table>
