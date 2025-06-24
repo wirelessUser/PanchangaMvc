@@ -38,10 +38,10 @@ namespace PanchangaMvc.Controllers
 
                 for (int month = 1; month <= 12; month++)
                 {
-                    int days = DateTime.DaysInMonth(2025, month);
+                    int days = DateTime.DaysInMonth(1998, month);
                     for (int day = 1; day <= days; day++)
                     {
-                        DateTime date = new DateTime(2025, month, day);
+                        DateTime date = new DateTime(1998, month, day);
                         DateTime sunrise = sunCalc.GetSunrise(date, tz);
                         DateTime nextSunrise = sunCalc.GetSunrise(date.AddDays(1), tz);
 
