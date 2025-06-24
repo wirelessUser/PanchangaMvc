@@ -25,7 +25,7 @@ namespace PanchangaMvc.Controllers
         public IActionResult FullYearYoga()
         {
             string ephePath = "ephe";
-            double lat = 28.63576, lon = 77.22445, tz = 5.5;
+            double lat = 27.88145, lon = 78.07464, tz = 5.5;
 
             var swe = new SwissEph();
             swe.swe_set_ephe_path(ephePath);
