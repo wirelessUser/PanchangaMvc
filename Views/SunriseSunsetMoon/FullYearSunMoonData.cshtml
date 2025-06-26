@@ -1,0 +1,31 @@
+﻿@model List<PanchangaMvc.Controllers.SunriseSunsetMoonController.SunMoonData>
+
+@{
+    ViewData["Title"] = "Full Year Sunrise, Sunset, Moonrise, Moonset for 2025";
+}
+
+<h2>🌞 Full Year Sunrise, Sunset, Moonrise, Moonset – New Delhi (2025)</h2>
+
+<table class="table table-bordered table-sm">
+    <thead class="table-dark">
+        <tr>
+            <th>Date</th>
+            <th>Sunrise</th>
+            <th>Sunset</th>
+            <th>Moonrise</th>
+            <th>Moonset</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var day in Model)
+        {
+            <tr>
+                <td>@day.Date.ToString("dd-MMM-yyyy")</td>
+                <td>@(day.Sunrise != DateTime.MinValue ? day.Sunrise.ToString("HH:mm:ss") : "N/A")</td>
+                <td>@(day.Sunset != DateTime.MinValue ? day.Sunset.ToString("HH:mm:ss") : "N/A")</td>
+                <td>@(day.Moonrise != DateTime.MinValue ? day.Moonrise.ToString("HH:mm:ss") : "N/A")</td>
+                <td>@(day.Moonset != DateTime.MinValue ? day.Moonset.ToString("HH:mm:ss") : "N/A")</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@model List<PanchangaMvc.Controllers.AllInOnePanchangaController.PanchangaDayResult>
+
+<h2>🌞 Full Year Panchanga (2025)</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Weekday</th>
+            <th>Sunrise</th>
+            <th>Sunset</th>
+            <th>Moonrise</th>
+            <th>Moonset</th>
+            <th>Tithi</th>
+            <th>Nakshatra</th>
+            <th>Yoga</th>
+            <th>Rahu Kalam</th>
+            <th>Gulika Kalam</th>
+            <th>Yamaganda</th>
+            <th>Abhijit Muhurta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var day in Model)
+        {
+            <tr>
+                <td>@day.Date.ToString("dd-MMM-yyyy")</td>
+                <td>@day.Weekday</td>
+                <td>@day.Sunrise</td>
+                <td>@day.Sunset</td>
+                <td>@day.Moonrise</td>
+                <td>@day.Moonset</td>
+                <td>@day.Tithi</td>
+                <td>@day.Nakshatra</td>
+                <td>@day.Yoga</td>
+                <td>@day.RahuKalam</td>
+                <td>@day.GulikaKalam</td>
+                <td>@day.Yamaganda</td>
+                <td>@day.Abhijit</td>
+            </tr>
+        }
+    </tbody>
+</table>

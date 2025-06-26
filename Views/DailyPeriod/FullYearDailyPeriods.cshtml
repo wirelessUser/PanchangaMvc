@@ -1,0 +1,86 @@
+﻿@model List<PanchangaMvc.Controllers.DailyPeriodController.DailyPeriodResult>
+
+@{
+    ViewData["Title"] = "Panchanga - Daily Periods (2025)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center; margin-top:20px;">🌞 Daily Panchanga Periods for 2025</h2>
+
+<table class="table table-bordered table-striped table-hover mt-4" style="width:100%;">
+    <thead class="table-dark">
+        <tr>
+            <th>Date</th>
+            <th>Weekday</th>
+            <th>Sun Sign</th>
+            <th>Moon Sign</th>
+            <th>Rahu Kalam</th>
+            <th>Gulika Kalam</th>
+            <th>Yamaganda</th>
+            <th>Abhijit Muhurta</th>
+            <th>Day Chogadiya</th>
+            <th>Night Chogadiya</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var day in Model)
+        {
+            <tr>
+                <td>@day.Date.ToString("dd-MMM-yyyy")</td>
+                <td>
+                    <span class="badge bg-primary">
+                        @day.Weekday
+                    </span>
+                </td>
+                <td>@day.SunSign</td>
+                <td>@day.MoonSign</td>
+                <td>@day.RahuKalam</td>
+                <td>@day.GulikaKalam</td>
+                <td>@day.Yamaganda</td>
+                <td>
+                    @if (day.Abhijit == "None")
+                    {
+                        <span style="color:red;">None</span>
+                    }
+                    else
+                    {
+                        <span>@day.Abhijit</span>
+                    }
+                </td>
+                <td style="max-width: 200px; overflow-y: auto;">
+                    @foreach (var ch in day.DayChogadiya)
+                    {
+                        <div>@ch</div>
+                    }
+                </td>
+                <td style="max-width: 200px; overflow-y: auto;">
+                    @foreach (var ch in day.NightChogadiya)
+                    {
+                        <div>@ch</div>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    table {
+        font-size: 0.9rem;
+        table-layout: fixed;
+    }
+
+    th, td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    div {
+        margin-bottom: 3px;
+    }
+
+    .badge {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+</style>
